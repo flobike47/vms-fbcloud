@@ -1,9 +1,11 @@
 import { Breadcrumb } from 'antd';
 import {Link, useLocation} from "react-router";
 import * as React from "react";
+import {theme} from "antd";
 
 const VmsBreadcrumb: React.FC = () => {
     const { pathname } = useLocation();
+    const {token: {marginLG}} = theme.useToken();
     const segments = pathname.split('/').filter(Boolean);
 
     const items = [
@@ -20,7 +22,7 @@ const VmsBreadcrumb: React.FC = () => {
         }),
     ];
 
-    return <Breadcrumb style={{ margin: '16px 0' }} items={items} />;
+    return <Breadcrumb style={{ margin: `${marginLG}px 0` }} items={items} />;
 };
 
 export default VmsBreadcrumb;

@@ -4,10 +4,10 @@ import {ConfigProvider, Layout, theme} from "antd";
 import {Content, Header} from "antd/es/layout/layout";
 import VmsBreadcrumb from "./component/VmsBreadcrumb";
 import {VmsHeader} from "./component/heeader/VmsHeader";
-import {defaultTheme} from "./config/ANTdefaultTheme";
+import {defaultTheme} from "./config/ANTDDefaultTheme";
 
 const App = () => {
-    const {token: {colorBgContainer, borderRadiusLG}} = theme.useToken();
+    const {token: {colorBgContainer, borderRadiusLG, marginLG, paddingLG}} = theme.useToken();
 
     return (
         <>
@@ -18,10 +18,10 @@ const App = () => {
                     <VmsSideBar/>
                     <Layout>
                         <VmsHeader/>
-                        <Content style={{margin: '0 15px'}}>
+                        <Content style={{margin: marginLG}}>
                             <VmsBreadcrumb/>
                             <Content style={{
-                                padding: 24,
+                                padding: paddingLG,
                                 minHeight: 360,
                                 borderRadius: borderRadiusLG,
                                 background: colorBgContainer,

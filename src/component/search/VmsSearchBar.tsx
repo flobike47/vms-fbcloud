@@ -1,17 +1,32 @@
 import Search from "antd/es/input/Search";
-import {Layout} from "antd";
+import {Layout, theme} from "antd";
 import {VmsSearchIcon} from "../icon/VmsSearchIcon";
 
 const VmsSearchBar = () => {
-    return <>
-        <Layout style={{padding: '5px',}}>
-            <Search styles={{}}></Search>
+    const {token: {colorBgContainer, borderRadiusLG, boxShadow, marginLG, paddingLG}} = theme.useToken();
+
+    return (
+        <Layout
+            style={{
+                padding: paddingLG,
+                background: colorBgContainer,
+                boxShadow: boxShadow,
+                borderRadius: borderRadiusLG,
+                marginBottom: marginLG,
+            }}
+        >
+            <Search
+                placeholder="Rechercher..."
+                allowClear
+                enterButton
+                size="large"
+                prefix={<VmsSearchIcon />}
+                style={{
+                    borderRadius: borderRadiusLG,
+                }}
+            />
         </Layout>
-    </>
-}
-
-
-
-
+    );
+};
 
 export {VmsSearchBar}
